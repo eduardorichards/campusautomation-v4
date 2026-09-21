@@ -3,10 +3,11 @@ stages:
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
-  SUITE_XML_FILE: "testng-regression.xml"
+  CUCUMBER_TAGS: "@regression"
 
 cache:
   key: maven-repo
+  when: always
   paths:
     - .m2/repository/
 
@@ -23,12 +24,12 @@ test:
     - apt-get update -qq
     - apt-get install -y -qq google-chrome-stable
   script:
-    - mvn clean test -Denv=ci -Dsuite.xml.file=$SUITE_XML_FILE -Dbrowser=chrome
+    - mvn clean test -Denv=ci -Dbrowser=chrome -Dcucumber.filter.tags="$CUCUMBER_TAGS"
   artifacts:
     when: always
     expire_in: 1 week
     reports:
       junit: target/surefire-reports/TEST-*.xml
     paths:
-      - target/screenshots/
+      - target/cucumber-reports/
       - target/surefire-reports/
