@@ -45,7 +45,7 @@ public class QuizSteps {
     }
     
     @Then("I should be on the guidance page")
-    public void IShouldBeOnTheGuidancePage() {
+    public void iShouldBeOnTheGuidancePage() {
         GuidancePage = new GuidancePage();
         assertTrue(GuidancePage.isLoaded());
         context.setCurrentPage(GuidancePage);

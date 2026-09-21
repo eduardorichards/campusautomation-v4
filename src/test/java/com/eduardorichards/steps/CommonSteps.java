@@ -16,7 +16,7 @@ public class CommonSteps {
     }
 
     @Given("I am on the EPAM Campus homepage")
-    public void IamAtTheHomepage() {
+    public void IamOnTheHomepage() {
         HomePage homwPage = new HomePage();
         homwPage.navigateTo();
         context.setCurrentPage(homwPage);

@@ -34,7 +34,7 @@ public class LocationFilterSteps {
     }
 
     @Then("the location dropdown should be open")
-    public void theLocationFilterShouldBeOpen() {
+    public void theLocationDropdownShouldBeOpen() {
         assertTrue(trainingProgramsPage.isLocationDropdownOpen());
     }
 
@@ -44,7 +44,7 @@ public class LocationFilterSteps {
     }
 
     @Then("the results should be filtered")
-    public void theResultsShouldBeFIltered() {
+    public void theResultsShouldBeFiltered() {
         assertTrue(trainingProgramsPage.isFilterApplied());
     }
 
