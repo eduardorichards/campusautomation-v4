@@ -55,11 +55,4 @@ public class ConfigReader {
     public static int getExplicitWaitSeconds() {
         return Integer.parseInt(get("explicit.wait.seconds"));
     }
-
-    public static List<String> getFilterCountries() {
-        String countries = get("filter.countries");
-        return Arrays.stream(countries.split(","))
-            .map(String::trim)
-            .toList();
-    }
 }
