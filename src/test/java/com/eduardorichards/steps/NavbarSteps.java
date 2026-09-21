@@ -19,7 +19,7 @@ public class NavbarSteps {
         this.context = context;
     }
 
-    @When("^I click \"(Career journey|Skills|Blog|About us)\" in the navbar$")
+    @When("^I click \"(.+)\" in the navbar$")
     public void iClickTheNavbar(String link) {
         AbstractPage page = context.getCurrentPage();
         switch (link) {
